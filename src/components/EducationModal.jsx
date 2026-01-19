@@ -30,9 +30,9 @@ export default function EducationModal({ show, onClose }) {
      if (!show) return null;
 
   return (
-    <div className="education-modal" onClick={() => setShowEducation(false)}>
+    <div className="education-modal" onClick={() => onClose()}>
                 <div className="education-content" onClick={(e) => e.stopPropagation()}>
-                  <button className="close-button" onClick={() => setShowEducation(false)}>×</button>
+                  <button className="close-button" onClick={() => onClose()}>×</button>
                   <div className="section-header">
                     <GraduationCap className="section-icon" size={32} />
                     <h2 className="section-title">Educational Background</h2>

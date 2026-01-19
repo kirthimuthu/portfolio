@@ -1,11 +1,12 @@
 import { FileText } from 'lucide-react';
+import ResumePDF from '../Resume/KiruthikaResume.pdf';
 
 export default function ResumeModal({ show, onClose }) {
   if (!show) return null;
   return(
-  <div className="education-modal" onClick={() => setShowResume(false)}>
+  <div className="education-modal" onClick={() => onClose()}>
               <div className="education-content" onClick={(e) => e.stopPropagation()}>
-                <button className="close-button" onClick={() => setShowResume(false)}>×</button>
+                <button className="close-button" onClick={() => onClose()}>×</button>
                 <div className="section-header">
                   <FileText className="section-icon" size={32} />
                   <h2 className="section-title">Resume</h2>
@@ -38,7 +39,7 @@ export default function ResumeModal({ show, onClose }) {
                     <p>Completed comprehensive training in full stack development, gaining hands-on experience with modern web technologies and frameworks.</p>
                   </div>
                   
-                  <button className="download-button" onClick={() => alert('Resume download functionality - Add your resume PDF link here!')}>
+                  <button className="download-button" onClick={() => window.open(ResumePDF, '_blank' )} >
                     <FileText size={20} />
                     Download Resume
                   </button>
